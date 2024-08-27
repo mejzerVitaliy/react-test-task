@@ -5,6 +5,10 @@ export default {
     extend: {
       fontFamily: {
         rubik: ['Rubik', 'sans-serif'],
+        karla: ['Karla', 'sans-serif']
+      },
+      letterSpacing: {
+        wide: '0.25em',
       }
     },
   },

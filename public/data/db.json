@@ -1,0 +1,317 @@
+{
+  "countries": [
+    {
+      "name": "Ukraine",
+      "value": "UA",
+      "id": "4acc"
+    },
+    {
+      "name": "United States",
+      "value": "US",
+      "id": "78ff"
+    },
+    {
+      "name": "Canada",
+      "value": "CA",
+      "id": "c56f"
+    },
+    {
+      "name": "Germany",
+      "value": "DE",
+      "id": "2b29"
+    },
+    {
+      "name": "France",
+      "value": "FR",
+      "id": "6b47"
+    },
+    {
+      "name": "Australia",
+      "value": "AU",
+      "id": "14a8"
+    },
+    {
+      "name": "Japan",
+      "value": "JP",
+      "id": "6151"
+    },
+    {
+      "name": "United Kingdom",
+      "value": "GB",
+      "id": "43de"
+    },
+    {
+      "name": "China",
+      "value": "CN",
+      "id": "28f5"
+    },
+    {
+      "name": "India",
+      "value": "IN",
+      "id": "eef7"
+    }
+  ],
+  "departments": [
+    {
+      "name": "Human Resources",
+      "value": "HR",
+      "id": "c4a8"
+    },
+    {
+      "name": "Finance",
+      "value": "FIN",
+      "id": "e545"
+    },
+    {
+      "name": "Information Technology",
+      "value": "IT",
+      "id": "1dfd"
+    },
+    {
+      "name": "Marketing",
+      "value": "MKT",
+      "id": "524f"
+    },
+    {
+      "name": "Sales",
+      "value": "SAL",
+      "id": "1cb0"
+    },
+    {
+      "name": "Customer Support",
+      "value": "CS",
+      "id": "69a6"
+    },
+    {
+      "name": "Research and Development",
+      "value": "R&D",
+      "id": "b7c9"
+    },
+    {
+      "name": "Operations",
+      "value": "OPS",
+      "id": "290d"
+    },
+    {
+      "name": "Legal",
+      "value": "LEG",
+      "id": "4ecf"
+    },
+    {
+      "name": "Product Management",
+      "value": "PM",
+      "id": "0e56"
+    }
+  ],
+  "statuses": [
+    {
+      "name": "All statuses",
+      "value": "ALL",
+      "id": "faf9"
+    },
+    {
+      "name": "Active",
+      "value": "ACTIVE",
+      "id": "9df1"
+    },
+    {
+      "name": "Disabled",
+      "value": "DISABLED",
+      "id": "184b"
+    }
+  ],
+  "users": [
+    {
+      "name": "John Doe",
+      "status": {
+        "name": "Active",
+        "value": "ACTIVE"
+      },
+      "department": {
+        "name": "Information Technology",
+        "value": "IT"
+      },
+      "country": {
+        "name": "United States",
+        "value": "US"
+      },
+      "id": "880b"
+    },
+    {
+      "name": "Jane Smith",
+      "status": {
+        "name": "Disabled",
+        "value": "DISABLED"
+      },
+      "department": {
+        "name": "Finance",
+        "value": "FIN"
+      },
+      "country": {
+        "name": "Canada",
+        "value": "CA"
+      },
+      "id": "eca5"
+    },
+    {
+      "name": "Alice Johnson",
+      "status": {
+        "name": "Active",
+        "value": "ACTIVE"
+      },
+      "department": {
+        "name": "Marketing",
+        "value": "MKT"
+      },
+      "country": {
+        "name": "United Kingdom",
+        "value": "GB"
+      },
+      "id": "7025"
+    },
+    {
+      "name": "Bob Brown",
+      "status": {
+        "name": "All statuses",
+        "value": "ALL"
+      },
+      "department": {
+        "name": "Sales",
+        "value": "SAL"
+      },
+      "country": {
+        "name": "Australia",
+        "value": "AU"
+      },
+      "id": "a7c8"
+    },
+    {
+      "name": "Charlie Davis",
+      "status": {
+        "name": "Active",
+        "value": "ACTIVE"
+      },
+      "department": {
+        "name": "Customer Support",
+        "value": "CS"
+      },
+      "country": {
+        "name": "Germany",
+        "value": "DE"
+      },
+      "id": "7caf"
+    },
+    {
+      "name": "Eve Wilson",
+      "status": {
+        "name": "Disabled",
+        "value": "DISABLED"
+      },
+      "department": {
+        "name": "Human Resources",
+        "value": "HR"
+      },
+      "country": {
+        "name": "France",
+        "value": "FR"
+      },
+      "id": "7e06"
+    },
+    {
+      "name": "Frank Moore",
+      "status": {
+        "name": "Active",
+        "value": "ACTIVE"
+      },
+      "department": {
+        "name": "Operations",
+        "value": "OPS"
+      },
+      "country": {
+        "name": "India",
+        "value": "IN"
+      },
+      "id": "9219"
+    },
+    {
+      "name": "Grace Lee",
+      "status": {
+        "name": "All statuses",
+        "value": "ALL"
+      },
+      "department": {
+        "name": "Legal",
+        "value": "LEG"
+      },
+      "country": {
+        "name": "China",
+        "value": "CN"
+      },
+      "id": "6886"
+    },
+    {
+      "name": "Henry White",
+      "country": {
+        "name": "Ukraine",
+        "value": "UA"
+      },
+      "department": {
+        "name": "Legal",
+        "value": "LEG"
+      },
+      "status": {
+        "name": "Disabled",
+        "value": "DISABLED"
+      },
+      "id": "218c"
+    },
+    {
+      "name": "Isabella Green",
+      "status": {
+        "name": "Disabled",
+        "value": "DISABLED"
+      },
+      "department": {
+        "name": "Research and Development",
+        "value": "R&D"
+      },
+      "country": {
+        "name": "Ukraine",
+        "value": "UA"
+      },
+      "id": "24a6"
+    },
+    {
+      "name": "Jack Black",
+      "status": {
+        "name": "Active",
+        "value": "ACTIVE"
+      },
+      "department": {
+        "name": "Sales",
+        "value": "SAL"
+      },
+      "country": {
+        "name": "Australia",
+        "value": "AU"
+      },
+      "id": "ed59"
+    },
+    {
+      "name": "Lily Scott",
+      "status": {
+        "name": "All statuses",
+        "value": "ALL"
+      },
+      "department": {
+        "name": "Information Technology",
+        "value": "IT"
+      },
+      "country": {
+        "name": "Canada",
+        "value": "CA"
+      },
+      "id": "760f"
+    }
+  ]
+}
