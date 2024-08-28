@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Country, Department, Status, User } from '../types/UsersDataTypes'
+import { Country, Department, Status, User } from '../../../app/types/UsersDataTypes'
 import EditUsersBtns from './EditUsersBtns'
 import { updateUserData } from '../api/editUsersData'
 

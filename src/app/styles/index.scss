@@ -11,6 +11,16 @@ body {
   height: 100%;
 }
 
+.scrollbar {
+  &::-webkit-scrollbar {
+      width: 4px; 
+  }
+  &::-webkit-scrollbar-thumb{
+    background: rgba(134, 157, 200, 0.2) ;
+    border-radius: 12px;
+  }
+}
+
 @keyframes LoaderAnimation {
   0% {
     transform: rotate(0deg) scale(1)

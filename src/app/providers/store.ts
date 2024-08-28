@@ -3,6 +3,7 @@ import { usersApi } from "../../features/editUser/api/usersApi";
 import { departmentsApi } from "../../features/editUser/api/departmentsApi";
 import { countriesApi } from "../../features/editUser/api/countriesApi";
 import { statusesApi } from "../../features/editUser/api/statusesApi";
+import AddUserModalSlice from "../../features/addUser/slices/AddUserModalSlice";
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     [departmentsApi.reducerPath]: departmentsApi.reducer,
     [countriesApi.reducerPath]: countriesApi.reducer,
     [statusesApi.reducerPath]: statusesApi.reducer,
+    addUserModal: AddUserModalSlice
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
@@ -20,5 +22,5 @@ export const store = configureStore({
     ),
 });
 
-export type RootState = ReturnType<typeof store.getState>;
+export type RootState = ReturnType<typeof store.getState>
 export type AppDispatch = typeof store.dispatch;
