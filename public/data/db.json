@@ -122,22 +122,6 @@
   ],
   "users": [
     {
-      "name": "John Doe",
-      "status": {
-        "name": "Active",
-        "value": "ACTIVE"
-      },
-      "department": {
-        "name": "Information Technology",
-        "value": "IT"
-      },
-      "country": {
-        "name": "United States",
-        "value": "US"
-      },
-      "id": "e2ae"
-    },
-    {
       "name": "Jane Smith",
       "status": {
         "name": "Disabled",
@@ -314,84 +298,20 @@
       "id": "3156"
     },
     {
-      "id": "1724840170720",
       "name": "Arina Loginova",
       "country": {
-        "name": "Japan",
-        "value": "JP"
-      },
-      "department": {
-        "name": "Finance",
-        "value": "FIN"
-      },
-      "status": {
-        "name": "Disabled",
-        "value": "DISABLED"
-      }
-    },
-    {
-      "id": "1724840201564",
-      "name": "MEJZER VITALIY",
-      "country": {
-        "name": "Ukraine",
-        "value": "UA"
-      },
-      "department": {
-        "name": "Information Technology",
-        "value": "IT"
-      },
-      "status": {
-        "name": "Active",
-        "value": "ACTIVE"
-      }
-    },
-    {
-      "id": "1724840805334",
-      "name": "Ivan Petrov",
-      "country": {
-        "name": "United Kingdom",
-        "value": "GB"
+        "name": "Germany",
+        "value": "DE"
       },
       "department": {
         "name": "Product Management",
         "value": "PM"
       },
       "status": {
-        "name": "All statuses",
-        "value": "ALL"
-      }
-    },
-    {
-      "id": "1724840932602",
-      "name": "Will Smith",
-      "country": {
-        "name": "Canada",
-        "value": "CA"
-      },
-      "department": {
-        "name": "Human Resources",
-        "value": "HR"
-      },
-      "status": {
-        "name": "Active",
-        "value": "ACTIVE"
-      }
-    },
-    {
-      "id": "1724842178413",
-      "name": "Max Willson",
-      "country": {
-        "name": "Australia",
-        "value": "AU"
-      },
-      "department": {
-        "name": "Human Resources",
-        "value": "HR"
-      },
-      "status": {
         "name": "Disabled",
         "value": "DISABLED"
-      }
+      },
+      "id": "1724840170720"
     }
   ]
 }

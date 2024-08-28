@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Country, Department, Status, User } from '../../../app/types/UsersDataTypes'
 import EditUsersBtns from './EditUsersBtns'
-import { updateUserData } from '../api/editUsersData'
+import { useUpdateUserMutation } from '../api/usersApi'
 
 interface AccountSettingsProps {
     users: User[]
@@ -11,6 +11,8 @@ interface AccountSettingsProps {
 }
 
 const AccountSettings: React.FC<AccountSettingsProps> = ({ users, countries, departments, statuses }) => {
+    const [updateUser] = useUpdateUserMutation()
+    
     const [selectedUserName, setSelectedUserName] = useState<string>('')
     
     const [userData, setUserData] = useState<User | null>(null)
@@ -23,16 +25,16 @@ const AccountSettings: React.FC<AccountSettingsProps> = ({ users, countries, dep
     const [updatedUser, setUpdatedUser] = useState<User>({
         name: selectedUserName,
         country: {
-            name: userData?.country.name,
-            value: userData?.country.value
+            name: userData?.country.name || '',
+            value: userData?.country.value || ''
         },
         department: {
-            name: userData?.department.name,
-            value: userData?.department.value
+            name: userData?.department.name || '',
+            value: userData?.department.value || ''
         },
         status: {
-            name: userData?.status.name,
-            value: userData?.status.value
+            name: userData?.status.name || '',
+            value: userData?.status.value || ''
         },
         id: userData?.id
     })
@@ -49,7 +51,8 @@ const AccountSettings: React.FC<AccountSettingsProps> = ({ users, countries, dep
     const editUser = async (selectedUserID: string | undefined, updatedUser: User) => {
         try {
             if (selectedUserID) {
-                await updateUserData(selectedUserID, updatedUser)
+                await updateUser({ id: selectedUserID, updatedUser })
+                setIsUndoBtn(false)
             } else console.error('user id not found');
         } catch (error) {
             console.error(error);

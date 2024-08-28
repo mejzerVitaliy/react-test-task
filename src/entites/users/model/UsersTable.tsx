@@ -3,7 +3,7 @@ import UsersList from './UsersList'
 import { User } from '../../../app/types/UsersDataTypes'
 
 interface UserTableProps{
-    users: User[]
+    users: User[] | undefined
 }
 
 const UsersTable: React.FC<UserTableProps> = ({ users }) => {

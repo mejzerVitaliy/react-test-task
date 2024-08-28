@@ -6,7 +6,6 @@ import Loader from '../../../shared/ui/Loader';
 import { useDispatch } from 'react-redux';
 import { toggleAddUserModal } from '../slices/AddUserModalSlice';
 import { Country, Department, Status, User } from '../../../app/types/UsersDataTypes';
-import { createNewUser } from '../../../entites/users/api/usersService';
 import { useCreateUserMutation } from '../../editUser/api/usersApi';
 
 const AddUserForm: React.FC = () => {
@@ -72,9 +71,9 @@ const AddUserForm: React.FC = () => {
         error: statusesErrors,
     } = useGetStatusesQuery();
 
-    if ( countriesLoading || departmentsLoading || statusesLoading) return <Loader />;
+    if ( countriesLoading || departmentsLoading || statusesLoading ) return <Loader />;
         
-    if ( countriesErrors || departmentsErrors || statusesErrors) console.error(countriesErrors || departmentsErrors || statusesErrors);
+    if ( countriesErrors || departmentsErrors || statusesErrors ) console.error(countriesErrors || departmentsErrors || statusesErrors);
 
     if (countries && departments && statuses) return (
         <section>

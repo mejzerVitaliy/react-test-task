@@ -1,16 +1,16 @@
 export interface Country {
-    value: string | undefined ;
-    name: string | undefined;
+    value: string  ;
+    name: string ;
 }
 
 export interface Department {
-    value: string | undefined;
-    name: string | undefined;
+    value: string ;
+    name: string ;
 }
 
 export interface Status {
-    value: string | undefined;
-    name: string | undefined;
+    value: string ;
+    name: string ;
 }
 
 export interface User {
