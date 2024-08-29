@@ -11,6 +11,14 @@ const app = express();
 const router = jsonServer.router(path.join(__dirname, 'db.json'));
 const middlewares = jsonServer.defaults();
 
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "https://react-test-task-beta.vercel.app");
+    res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+    next();
+});
+
+
 app.use(cors());
 app.use('/api', middlewares, router);
 
