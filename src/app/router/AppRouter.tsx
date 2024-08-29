@@ -9,6 +9,7 @@ const AppRouter:React.FC = () => {
                 <Route path={route.path} key={route.path} element={<route.element />} />
             ))}
             <Route path='*' element={<Navigate to='/' />} />
+            <Route path='/' element={<Navigate to='/users' />} />
         </Routes>
     )
 }
