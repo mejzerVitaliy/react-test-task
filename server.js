@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
-const router = jsonServer.router(path.join(__dirname, 'public', 'data',  'db.json'));
+const router = jsonServer.router(path.join(__dirname,  'db.json'));
 const middlewares = jsonServer.defaults();
 app.use('/api', middlewares, router); 
 
