@@ -48,9 +48,11 @@ const UsersList: React.FC<UserListProps> = ({ users }) => {
                             </td>
                     </tr>
                     ))
-                    : <section className='w-full h-full flex items-center justify-center'>
+                    : <tr className='w-full h-full flex items-center justify-center'>
+                        <th>
                             <Title title='USER NOT FOUND' />
-                    </section>
+                        </th>
+                    </tr>
                 
                 }
             </tbody>

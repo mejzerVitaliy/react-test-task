@@ -308,8 +308,8 @@
         "value": "PM"
       },
       "status": {
-        "name": "Disabled",
-        "value": "DISABLED"
+        "name": "All statuses",
+        "value": "ALL"
       },
       "id": "1724840170720"
     }

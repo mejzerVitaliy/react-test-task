@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { Country, Department, Status, User } from '../../../app/types/UsersDataTypes'
 import EditUsersBtns from './EditUsersBtns'
 import { useUpdateUserMutation } from '../api/usersApi'
@@ -14,14 +14,13 @@ const AccountSettings: React.FC<AccountSettingsProps> = ({ users, countries, dep
     const [updateUser] = useUpdateUserMutation()
     
     const [selectedUserName, setSelectedUserName] = useState<string>('')
-    
-    const [userData, setUserData] = useState<User | null>(null)
-
     const [selectedCountry, setSelectedCountry] = useState<string | undefined>(undefined)
     const [selectedDepartment, setSelectedDepartment] = useState<string | undefined>(undefined)
     const [selectedStatus, setSelectedStatus] = useState<string | undefined>(undefined)
+
     const [isUndoBtn, setIsUndoBtn] = useState<boolean>(false)
 
+    const [userData, setUserData] = useState<User | null>(null)
     const [updatedUser, setUpdatedUser] = useState<User>({
         name: selectedUserName,
         country: {
@@ -39,14 +38,10 @@ const AccountSettings: React.FC<AccountSettingsProps> = ({ users, countries, dep
         id: userData?.id
     })
 
-    const filterUsersByName = (name: string) => {
+    const filterUsersByName = useCallback((name: string) => {
         const user = users.find((user: User) => user.name === name)
-        if (user) {
-            setUserData(user)
-        } else {
-            console.error('User not found!')
-        }
-    }
+        user ? setUserData(user) : console.error('User not found!')
+    }, [users])
 
     const editUser = async (selectedUserID: string | undefined, updatedUser: User) => {
         try {
@@ -63,34 +58,26 @@ const AccountSettings: React.FC<AccountSettingsProps> = ({ users, countries, dep
         setSelectedCountry(userData?.country.name)
         setSelectedDepartment(userData?.department.name)
         setSelectedStatus(userData?.status.name)
-
         setIsUndoBtn(false)
     }
 
     useEffect(() => {
         if (selectedUserName) {
-            console.log(selectedUserName);
-
             filterUsersByName(selectedUserName)
         }
-    }, [selectedUserName, users])
+    }, [selectedUserName])
 
     useEffect(() => {
         if (userData) {
             setSelectedCountry(userData.country.name)
             setSelectedDepartment(userData.department.name)
             setSelectedStatus(userData.status.name)
-
         } else {
             setSelectedCountry('')
             setSelectedDepartment('')
             setSelectedStatus('')
         }   
     }, [userData])
-        
-    useEffect(() => {
-        console.log(updatedUser);
-    }, [updatedUser])
 
     useEffect(() => {
         if (selectedCountry && selectedDepartment && selectedStatus && userData) {
@@ -102,15 +89,15 @@ const AccountSettings: React.FC<AccountSettingsProps> = ({ users, countries, dep
                 name: selectedUserName,
                 country: {
                     name: selectedCountry,
-                    value: updatedCountry ? updatedCountry.value : userData.country.value
+                    value: updatedCountry?.value || userData.country.value
                 },
                 department: {
                     name: selectedDepartment,
-                    value: updatedDepartment ? updatedDepartment.value : userData.department.value
+                    value: updatedDepartment?.value || userData.department.value
                 },
                 status: {
                     name: selectedStatus,
-                    value: updatedStatus ? updatedStatus.value : userData.status.value
+                    value: updatedStatus?.value || userData.status.value
                 },
                 id: userData.id
             });

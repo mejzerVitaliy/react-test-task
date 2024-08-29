@@ -9,34 +9,14 @@ import { useGetDepartmentsQuery } from "../features/editUser/api/departmentsApi"
 import { useGetStatusesQuery } from "../features/editUser/api/statusesApi";
 
 const EditUserPage: React.FC = () => {
-    const {
-        data: users,
-        isLoading: usersLoading,
-        error: usersErrors,
-    } = useGetUsersQuery();
-    const {
-        data: countries,
-        isLoading: countriesLoading,
-        error: countriesErrors,
-    } = useGetCountriesQuery();
-    const {
-        data: departments,
-        isLoading: departmentsLoading,
-        error: departmentsErrors,
-    } = useGetDepartmentsQuery();
-    const {
-        data: statuses,
-        isLoading: statusesLoading,
-        error: statusesErrors,
-    } = useGetStatusesQuery();
+    const {data: users, isLoading: usersLoading, error: usersErrors} = useGetUsersQuery();
+    const { data: countries, isLoading: countriesLoading, error: countriesErrors } = useGetCountriesQuery();
+    const { data: departments, isLoading: departmentsLoading, error: departmentsErrors } = useGetDepartmentsQuery();
+    const { data: statuses, isLoading: statusesLoading, error: statusesErrors } = useGetStatusesQuery();
 
-    if (usersLoading || countriesLoading || departmentsLoading || statusesLoading)
-        return <Loader />;
+    if (usersLoading || countriesLoading || departmentsLoading || statusesLoading) return <Loader />;
 
-    if (usersErrors || countriesErrors || departmentsErrors || statusesErrors)
-        console.error(
-        usersErrors || countriesErrors || departmentsErrors || statusesErrors
-        );
+    if (usersErrors || countriesErrors || departmentsErrors || statusesErrors) console.error( usersErrors || countriesErrors || departmentsErrors || statusesErrors );
 
     if (users && countries && departments && statuses) return (
         <main className="w-full h-full">

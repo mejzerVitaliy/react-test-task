@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { toggleAddUserModal } from '../../addUser/slices/AddUserModalSlice'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { Country, Department, Status} from '../../../app/types/UsersDataTypes'
 import { setFilterCountry, setFilterDepartments, setFilterStatus } from '../slices/filterUsersSlice'
-import { RootState } from '../../../app/providers/store'
+
 
 interface FilterUsersProps{
     departments: Department[],
@@ -13,7 +13,6 @@ interface FilterUsersProps{
 
 const FilterUsers: React.FC<FilterUsersProps> = ({ departments, countries, statuses}) => {
     const dispatch = useDispatch()
-    const {selectedDepartments} = useSelector((state:RootState) => state.filterUsers)
 
     const [isOpenSelectorDepartments, setIsOpenSelectorDepartments] = useState<boolean>(false)
     const [isOpenSelectorCountry, setIsOpenSelectorCountry] = useState<boolean>(false)
@@ -201,7 +200,7 @@ const FilterUsers: React.FC<FilterUsersProps> = ({ departments, countries, statu
                             setSelectedCountry(null)
                             setSelectedStatus(null)
                             dispatch(setFilterCountry(null))
-                            dispatch(setFilterDepartments([]))
+                            dispatch(setFilterDepartments(null))
                             setFilterStatus(null)
                         }}
                         className='w-[48px] h-[48px] flex justify-center items-center border border-solid border-[#c4c4c4]'
