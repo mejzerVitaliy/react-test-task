@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
 
-const base_url = 'https://react-test-task.onrender.com/api/'
+const base_url = 'https://react-test-task.onrender.com/'
 
 export const countriesApi = createApi({
     reducerPath: 'countriesApi',

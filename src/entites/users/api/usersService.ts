@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const base_url = 'https://react-test-task.onrender.com/api/'
+const base_url = 'https://react-test-task.onrender.com/'
 
 export const deleteUserByID = async (id: string) => {
     try {
