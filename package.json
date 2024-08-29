@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start:json-server": "json-server --watch db.json --port 5000",
+    "start:json-server": "json-server --watch db.json --port 10000",
     "start": "node server.js"
   },
   "dependencies": {
