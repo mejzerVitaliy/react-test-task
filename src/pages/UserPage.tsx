@@ -18,33 +18,13 @@ const UserPage: React.FC = () => {
     const filtersDepartments = useSelector((state: RootState) => state.filterUsers.selectedDepartments)
     const filterCountry = useSelector((state: RootState) => state.filterUsers.selectedCountry)
     const filterStatus = useSelector((state: RootState) => state.filterUsers.selectedStatus)
-
-    
     
     const [filteredUsers, setFilteredUsers] = useState<User[] | undefined>()
 
-    
-
-    const {
-        data: users,
-        isLoading: usersLoading,
-        error: usersErrors,
-    } = useGetUsersQuery();
-    const {
-        data: countries,
-        isLoading: countriesLoading,
-        error: countriesErrors,
-    } = useGetCountriesQuery();
-    const {
-        data: departments,
-        isLoading: departmentsLoading,
-        error: departmentsErrors,
-    } = useGetDepartmentsQuery();
-    const {
-        data: statuses,
-        isLoading: statusesLoading,
-        error: statusesErrors,
-    } = useGetStatusesQuery();
+    const { data: users, isLoading: usersLoading, error: usersErrors } = useGetUsersQuery();
+    const { data: countries, isLoading: countriesLoading, error: countriesErrors } = useGetCountriesQuery();
+    const { data: departments, isLoading: departmentsLoading, error: departmentsErrors } = useGetDepartmentsQuery();
+    const { data: statuses, isLoading: statusesLoading, error: statusesErrors } = useGetStatusesQuery();
 
     useEffect(() => {
         let filteredUsers: User[] | undefined = []
@@ -84,6 +64,5 @@ const UserPage: React.FC = () => {
         </main>
     )
 }
-    
     
 export default UserPage
