@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { User } from "../../../app/types/UsersDataTypes";
 
-const base_url = 'http://localhost:10000'
+const base_url = 'https://react-test-task.onrender.com'
 
 export const usersApi = createApi({
     reducerPath: 'usersApi',
