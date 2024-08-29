@@ -1,13 +1,13 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
 
-const base_url = 'https://react-test-task.onrender.com'
+const base_url = 'https://react-test-task.onrender.com/api/'
 
 export const departmentsApi = createApi({
     reducerPath: 'departmentsApi',
     baseQuery: fetchBaseQuery({ baseUrl: base_url }),
     endpoints: (builder) => ({
         getDepartments: builder.query<any[], void>({
-            query: () => '/departments'
+            query: () => 'departments'
         })
     })
 })
