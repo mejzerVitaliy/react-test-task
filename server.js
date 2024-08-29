@@ -2,11 +2,15 @@ import jsonServer from 'json-server';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import express from 'express';
+import cors from 'cors';
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
+
+app.use(cors());
 
 const router = jsonServer.router(path.join(__dirname,  'db.json'));
 const middlewares = jsonServer.defaults();
