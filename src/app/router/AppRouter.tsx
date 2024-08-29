@@ -8,7 +8,7 @@ const AppRouter:React.FC = () => {
             {routes.map((route) => (
                 <Route path={route.path} key={route.path} element={<route.element />} />
             ))}
-            <Route path='/*' element={<Navigate to='/users' />} />
+            <Route path='*' element={<Navigate to='/' />} />
         </Routes>
     )
 }
