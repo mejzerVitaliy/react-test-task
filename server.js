@@ -23,7 +23,7 @@ app.use('/api', middlewares, router);
 app.use(express.static(path.join(__dirname, 'dist')));
 
 app.get('*', (req, res) => {
-    res.redirect('https://my-react-test-task.onrender.com');
+    res.sendFile('dist/index.html');
 });
 
 const PORT = process.env.PORT || 10000;
