@@ -79,10 +79,10 @@ const FilterUsers: React.FC<FilterUsersProps> = ({ departments, countries, statu
             <section className='flex justify-between w-full h-[48px]'>
                 <section className='flex justify-between w-[752px] h-full'>
                     <article className='flex justify-between w-[684px]'>
-                        <article className=' w-[220px] z-20 bg-white  border border-solid border-black'> 
-                            <article onClick={toggleOpenSelectorDep} className='relative cursor-pointer flex items-center py-[8px] px-[24px] w-full h-full'>
+                        <article className=' w-[220px] z-20  bg-white  border border-solid border-black'> 
+                            <article onClick={toggleOpenSelectorDep} className='relative  cursor-pointer flex items-center py-[8px] px-[24px] w-full h-full'>
                                 {!isOpenSelectorDepartments
-                                    ? <p className='font-rubik font-bold text-[14px]'>{selectedDepartmentsArr.length ? `Selected(${selectedDepartmentsArr.length})` : 'Select departments'}</p>
+                                    ? <p className='font-rubik font-semibold text-[14px]'>{selectedDepartmentsArr.length ? `Selected(${selectedDepartmentsArr.length})` : 'Select departments'}</p>
                                     : <input
                                         onClick={(e) => {
                                             e.stopPropagation()
@@ -107,8 +107,7 @@ const FilterUsers: React.FC<FilterUsersProps> = ({ departments, countries, statu
                                 </button>
                             </article>
                             
-                            {/* <input type="text" placeholder='Type to search...' /> */}
-                            <article className={!isOpenSelectorDepartments? 'hidden' : 'flex flex-col w-[220px]  border border-solid border-black bg-white '}>
+                            <article className={!isOpenSelectorDepartments? 'hidden' : 'flex flex-col w-[220px] overflow-y-auto overflow-x-hidden scrollbar max-h-[160px]  border border-solid border-black bg-white '}>
                                 {filteredDepartments.map((department: Department) => (
                                     <label key={department.name} className=' w-[220px] h-[40px] py-[8px] px-[25px] font-rubik text-[14px] text-[#5e626b] hover:bg-[#00000017] flex items-center'> 
                                         <button  onClick={() => toggleCheckDep(department)} className='w-[24px] h-[24px] mr-[12px] flex justify-center items-center border border-solid border-black'>
@@ -139,7 +138,7 @@ const FilterUsers: React.FC<FilterUsersProps> = ({ departments, countries, statu
                                 </button>
                             </article>
                             
-                            <article className={!isOpenSelectorCountry? 'hidden' : 'flex flex-col w-[220px]  border border-solid border-black bg-white '}>
+                            <article className={!isOpenSelectorCountry? 'hidden' : 'flex flex-col w-[220px] overflow-y-auto overflow-x-hidden scrollbar max-h-[160px]  border border-solid border-black bg-white '}>
                                 {selectedCountry?.name && <label className=' w-[220px] h-[40px] py-[8px] px-[25px] font-rubik text-[14px] text-[#5e626b] hover:bg-[#00000017] flex items-center'>{ selectedCountry?.name }</label>}
                                 {countries.map((country: Country) => (
                                     country.name !== selectedCountry?.name && (
@@ -173,7 +172,7 @@ const FilterUsers: React.FC<FilterUsersProps> = ({ departments, countries, statu
                                 </button>
                             </article>
 
-                            <article className={!isOpenSelectorStatus? 'hidden' : 'flex flex-col w-[220px]  border border-solid border-black bg-white '}>
+                            <article className={!isOpenSelectorStatus? 'hidden' : 'flex flex-col w-[220px] overflow-y-auto overflow-x-hidden scrollbar max-h-[160px]  border border-solid border-black bg-white '}>
                                 {selectedStatus?.name && <label className=' w-[220px] h-[40px] py-[8px] px-[25px] font-rubik text-[14px] text-[#5e626b] hover:bg-[#00000017] flex items-center'>{selectedStatus?.name}</label>}
                                 {statuses.map((status: Status) => (
                                     status.name !== selectedStatus?.name && (

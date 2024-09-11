@@ -22,7 +22,7 @@ const EditUserPage: React.FC = () => {
         <main className="w-full h-full">
             <Navbar editUsersPage />
             <main className="flex items-center justify-center mt-[88px] px-[100px] py-[80px]">
-                <section className=" flex flex-col justify-between border border-solid border-black w-[1240px] h-[768px] max-w-[1400px] px-[80px] pt-[60px] pb-[80px]">
+                <section className=" flex flex-col justify-between border border-solid border-black w-[1240px] min-h-[768px] max-w-[1400px] px-[80px] pt-[60px] pb-[80px]">
                     <Title title="EDIT USER" />
 
                     <AccountSettings
